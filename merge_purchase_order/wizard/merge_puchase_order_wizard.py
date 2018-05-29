@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import fields, models, api, _
-from odoo.exceptions import UserError
+from openerp import _, api, fields, models, tools
+from openerp.exceptions import UserError, AccessError
 
 
 class MergePurchaseOrder(models.TransientModel):

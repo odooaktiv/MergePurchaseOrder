@@ -3,7 +3,7 @@
 {
     'name': 'Merge Purchase Order',
     'category': 'Purchase',
-    'version': '10.1',
+    'version': '1.1',
     'website': 'http://www.aktivsoftware.com',
     'author': 'Aktiv Software',
     'license': 'AGPL-3',

@@ -19,6 +19,7 @@
             </form>
         </field>
     </record>
+	
 
     <act_window name="Merge Orders"
             res_model="merge.purchase.order"
@@ -26,8 +27,7 @@
             view_mode="form"
             target="new"
             key2="client_action_multi"
-            id="action_view_merge_purchase_order"/>
-
+            id="action_view_purchase_order_group"/>
 
     <!-- Action of Merge Purchase Order -->
     <record id="action_view_merge_purchase_line" model="ir.actions.act_window">
