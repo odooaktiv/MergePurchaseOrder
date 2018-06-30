@@ -63,12 +63,14 @@ class MergePurchaseOrder(models.TransientModel):
                 for line in order.order_line:
                     if po.order_line:
                         for poline in po.order_line:
-                            if line.product_id == poline.product_id and line.price_unit == poline.price_unit:
+                            if line.product_id == poline.product_id and \
+                                    line.price_unit == poline.price_unit:
                                 existing_po_line = poline
                                 break
                     if existing_po_line:
                         existing_po_line.product_qty += line.product_qty
-                        po_taxes = [tax.id for tax in existing_po_line.taxes_id]
+                        po_taxes = [
+                            tax.id for tax in existing_po_line.taxes_id]
                         [po_taxes.append((tax.id))
                          for tax in line.taxes_id]
                         existing_po_line.taxes_id = \
@@ -93,7 +95,8 @@ class MergePurchaseOrder(models.TransientModel):
                                 break
                     if existing_po_line:
                         existing_po_line.product_qty += line.product_qty
-                        po_taxes = [tax.id for tax in existing_po_line.taxes_id]
+                        po_taxes = [
+                            tax.id for tax in existing_po_line.taxes_id]
                         [po_taxes.append((tax.id))
                          for tax in line.taxes_id]
                         existing_po_line.taxes_id = \
@@ -118,7 +121,8 @@ class MergePurchaseOrder(models.TransientModel):
                                 break
                     if existing_po_line:
                         existing_po_line.product_qty += line.product_qty
-                        po_taxes = [tax.id for tax in existing_po_line.taxes_id]
+                        po_taxes = [
+                            tax.id for tax in existing_po_line.taxes_id]
                         [po_taxes.append((tax.id))
                          for tax in line.taxes_id]
                         existing_po_line.taxes_id = \
@@ -143,7 +147,8 @@ class MergePurchaseOrder(models.TransientModel):
                                 break
                     if existing_po_line:
                         existing_po_line.product_qty += line.product_qty
-                        po_taxes = [tax.id for tax in existing_po_line.taxes_id]
+                        po_taxes = [
+                            tax.id for tax in existing_po_line.taxes_id]
                         [po_taxes.append((tax.id))
                          for tax in line.taxes_id]
                         existing_po_line.taxes_id = \
