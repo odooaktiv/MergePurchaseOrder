@@ -6,6 +6,7 @@
     'version': '10.1',
     'website': 'http://www.aktivsoftware.com',
     'author': 'Aktiv Software',
+    'license': 'AGPL-3',
     'description': 'Merge Purchase Order',
 
     'depends': [
