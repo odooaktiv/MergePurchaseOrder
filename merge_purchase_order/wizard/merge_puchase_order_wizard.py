@@ -3,6 +3,10 @@
 from odoo import fields, models, api, _
 from odoo.exceptions import UserError
 
+import logging
+
+_logger = logging.getLogger(__name__)
+
 
 class MergePurchaseOrder(models.TransientModel):
     _name = 'merge.purchase.order'
@@ -60,8 +64,6 @@ class MergePurchaseOrder(models.TransientModel):
                 'onchange_fields_to_trigger': [partner]
             }).create({'partner_id': partner})
             default = {'order_id': po.id}
-
-
         # 'merge_cancel': or other cases
         else:
             po = self.purchase_order_id
@@ -72,27 +74,46 @@ class MergePurchaseOrder(models.TransientModel):
             if order == po and self.merge_type != 'new_cancel' and self.merge_type != 'new_delete':
                 continue
             for line in order.order_line:
+                # Debug
+                msg = "MERGE_PURCHASE_ORDER ID: {} po.order_line: {} existing_po_line: {} {} {}".format(line.product_id,
+                                                                                                        line.name,
+                                                                                                        po.order_line,
+                                                                                                        existing_po_line,
+                                                                                                        order)
+                _logger.info(msg)
                 if po.order_line:
                     for poline in po.order_line:
                         if line.product_id == poline.product_id and line.price_unit == poline.price_unit:
                             existing_po_line = poline
                             break
                 if existing_po_line:
-                    existing_po_line.product_qty += line.product_qty
-                    po_taxes = [tax.id for tax in existing_po_line.taxes_id]
-                    # Fixme needs to be in [] ?
-                    [po_taxes.append(tax.id) for tax in line.taxes_id]
-                    existing_po_line.taxes_id = [(6, 0, po_taxes)]
+                    # print the line that are merged following upstream version. (debugging purpose)
+                    # Try: FIX issue https://github.com/odooaktiv/MergePurchaseOrder/issues/2 ?
+                    msg = "Merge product existing line ID {} Product Name {}".format(existing_po_line.product_id,
+                                                                                     existing_po_line.name)
+                    _logger.debug(msg)
+                    msg = "product line ID {} name {}".format(line.product_id, line.name)
+                    _logger.debug(msg)
+                    if line.product_id == existing_po_line.product_id:
+                        # Merge only identical lines
+                        existing_po_line.product_qty += line.product_qty
+                        po_taxes = [tax.id for tax in existing_po_line.taxes_id]
+                        # Fixme needs to be in [] ?
+                        [po_taxes.append(tax.id) for tax in line.taxes_id]
+                        existing_po_line.taxes_id = [(6, 0, po_taxes)]
+                    else:
+                        # prevent the bug case to forget the line
+                        line.copy(default=default)
                 else:
                     line.copy(default=default)
-
         for order in purchase_orders:
             if self.merge_type == 'new_cancel':
                 order.button_cancel()
+            if self.merge_type == 'new_delete':
+                order.sudo().button_cancel()
+                order.sudo().unlink()
             if self.merge_type == 'merge_cancel':
                 order.sudo().button_cancel()
-
-            # 'new_delete': or other cases
-            else:
+            if self.merge_type == 'merge_delete':
                 order.sudo().button_cancel()
                 order.sudo().unlink()
