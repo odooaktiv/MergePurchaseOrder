@@ -3,11 +3,12 @@
 {
     'name': 'Merge Purchase Order',
     'category': 'Purchase',
-    'version': '1.1',
+    'summary': 'This module will merge purchase order.',
+    'version': '12.0.1.0.0',
     'website': 'http://www.aktivsoftware.com',
     'author': 'Aktiv Software',
-    'license': 'AGPL-3',
     'description': 'Merge Purchase Order',
+    'license': "AGPL-3",
 
     'depends': [
         'purchase',

@@ -5,48 +5,95 @@
                     Merge Purchase Order </span></b></h4>
         </div>
     </div>
-    <h3 class="oe_slogn" style="text-align: center;color: #31708f;">The purpose of this module is to Merge the purchase order with are in Request For Quoation State.</b><b>This module helps us to reduce RFQ for same vendors thus orders can be easily managed
-    </h3>
-    
-    <div class="oe_row oe_centered">
-        <div class="oe_row oe_spaced">
-        <div class="oe_span12">
-                <center><img class="img-border img-responsive thumbnail" style="border: 3px solid black;" src="image/mergeorder.png"/></center>
-                </div>
-        </div>
+
+    <p align="left">The Merge Purchase Order module allows you to merge the purchase orders in Quotation State. It helps to reduce the RFQ for same vendors and thus orders can be easily managed. You will also get further customization when you select orders and go for the “Merge Order” stage. Here are some of the customization Aktiv has provided with the Merging of Purchase Orders.</p>
+
+    <div class="oe_centered">
+        <ul>
+            <li>After the selection of purchase order when user goes to the “Merge Orders” the first option will be displayed as- To create new order and cancel all selected purchase orders.</li>
+            <li>Further the second option will work for the vendors who want to see a new order by merging similar purchase order and deleting rest of the selected orders.</li>
+            <li>For the third option you can see a purchase orders field where you can select existing order and add other orders by cancelling rest of the selected orders.</li>
+            <li>The fourth customization is similar to third with a small difference where after you select order and add other orders then rest of the selected orders will be deleted.</li>
+        </ul>
     </div>
 
     <div class="oe_row oe_centered">
-        <div class="oe_row oe_spaced">
+        <div class="oe_span_10 oe_centered">
+            <h4 class="oe_slogan" style="margin-left: 120px;"><b><span class="fa fa-star fa-spin"></span>
+                    Prerequisites before Installation </span></b></h4>
+        </div>
+    </div>
+    <p align="left">No prerequisites are required before the installation.</p>
+
+
+    <div class="oe_row oe_centered">
+        <div class="oe_span_10 oe_centered">
+            <h4 class="oe_slogan" style="margin-left: 120px;"><b><span class="fa fa-star fa-spin"></span>
+                    Configurations </span></b></h4>
+        </div>
+    </div>
+    <p align="left">For merging purchase orders, you will have to select multiple orders displayed in the quotation stage and go to the “Action” tab to avail the Merge Purchase Order feature.</p>
+
+    <div class="oe_centered">
+        <p>As shown in the image when user selects two/more purchase orders from the quotation tab and taps on the “Action” tab they will be able to merge order by clicking on “Merge Order”.</p>
+    </div>
+    <div class="oe_row oe_centered">
         <div class="oe_span12">
-                <center><img class="img-border img-responsive thumbnail" style="border: 3px solid black;" src="image/mergewizard.png"/></center>
-                </div>
-        </div>
-        <div class="oe_span12">
-            <h4 class="oe_slogn">
-                <ul><li>If you selected first option 'Create new order and cancel all selected purchase orders'.After click on Merge Orders button, You can see a new order will be created and other selected order will be cancelled.</li><br/>
-                    <li>If we go with second type option.After click on Merge Orders button,with second option You can see a new order will be created and other selected order will be deleted.</li><br/>
-                    <li>If we goes with third type option.You can see a 'Purchase Orders' field, In this you can select a existing order in which you want to added another selected orders.After click on Merge Orders button, You can see a another orders merge with selected existing order.And rest of all selected orders will be cancelled.</li></ul>
-        </h4>
-        </div>
-        <div class="oe_row oe_centered">
-            <div class="oe_span12">
-                <img class="img-border img-responsive thumbnail" style="border: 3px solid black;" src="image/mergeselected.png">
-            </div>
-        </div>
-        <div class="oe_span12">
-        <h4 class="oe_slogn">
-                <ul><li>If we goes with forth type option.You can see a 'Purchase Orders' field, In this you can select a existing order in which you want to added another selected orders.After click on Merge Orders button, You can see a another orders merge with selected existing order.And rest of all selected orders will be deleted.</li>
-                </ul>
-                <br/>
-            </h4>
-        </div>
-        <h3 class="oe_slogn" style="text-align: center;color: #31708f;"> Vendors from the Selected PO orders should be same Otherwise this Warning is thrown</h3>
-        <div class="oe_row oe_centered">
-            <div class="oe_span12">
-                <img class="img-border img-responsive thumbnail" style="border: 3px solid black;" src="image/warning.png">
-            </div>
+            <img src="image/mergeorder.png" style="width: 100%;"/>
         </div>
     </div>
 
-</section> 
+    <div class="oe_centered">
+        <p>When you click on the “Merge Orders” you will be asked to choose from four different options before merging the orders.</p>
+        <p>As shown in the below image you can:</p>
+        <div class="oe_centered">
+        <ul>
+            <li>Create order by merging orders and cancel the selected orders.</li>
+            <li>Create new order by merging orders and deleting the selected orders.</li>
+            <li>Select existing order and add other orders to the existing order and cancel others.</li>
+            <li>Select existing order and add other orders to the existing order and delete others.</li>
+        </ul>
+    </div>
+    </div>
+    <div class="oe_row oe_centered">
+        <div class="oe_span12">
+            <img src="image/mergewizard.png" style="width: 100%;"/>
+        </div>
+    </div>
+
+    <div class="oe_centered">
+        <p>Let’s consider adding two purchase order for merging with fourth option- “Select a purchase order and other purchase order to the existing order and delete other orders”.</p>
+        <p>You can see a 'Purchase Orders' field, in this you can select an existing order in which you can add another selected order. After clicking on Merge Orders button, you can see other orders merge with selected existing order. And rest of all selected orders will be deleted.</p>
+    </div>
+    <div class="oe_row oe_centered">
+        <div class="oe_span12">
+            <img src="image/mergeselected.png" style="width: 100%;"/>
+        </div>
+    </div>
+
+    <div class="oe_centered">
+        <p>Vendors from the selected Purchase Order should be same otherwise you will get a warning window displayed on your screen.</p>
+    </div>
+    <div class="oe_row oe_centered">
+        <div class="oe_span12">
+            <img src="image/warning.png" style="width: 100%;"/>
+        </div>
+    </div>
+
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">
+            <a href="http://aktivsoftware.com/" target="new">
+                <img src="aktiv-logo.png"/>
+            </a>
+            <br/>
+            <a href="mailto:sales@aktivsoftware.com" style="color: #000000 !important;">
+                        Get Help &amp; Support
+            </a>
+        </h2>
+        <div class="oe_slogan oe_spaced text-center">
+            <a class="btn btn success mt8" title="website" target="new" style="background-color:#ff4040;  color: #ffffff; !important; position:relative; overflow: hidden;" href="http://aktivsoftware.com/"><b>Website</b></a>
+            <a class="btn btn success mt8" title="Contact Us" style="background-color:#ff4040; color: #ffffff; !important; position:relative; overflow: hidden;" href="mailto:sales@aktivsoftware.com"><b>Contact Us</b></a>
+            <a class="btn btn success mt8" title="Request New Features Now!" style="background-color:#ff4040; color: #ffffff; !important; position:relative; overflow: hidden;" href="mailto:sales@aktivsoftware.com"><b>Request For New Features</b></a>
+        </div>
+    </div>
+</section>
