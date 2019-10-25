@@ -35,7 +35,6 @@ class MergePurchaseOrder(models.TransientModel):
                 }
             return res
 
-    @api.multi
     def merge_orders(self):
         purchase_orders = self.env['purchase.order'].browse(
             self._context.get('active_ids', []))
