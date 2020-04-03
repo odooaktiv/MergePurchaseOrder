@@ -3,7 +3,7 @@
 {
     'name': 'Merge Purchase Order',
     'category': 'Purchase',
-    'version': '10.0.1.0.0',
+    'version': '10.0.1.0.1',
     'summary': 'This module will merge purchase order.',
     'website': 'http://www.aktivsoftware.com',
     'author': 'Aktiv Software',
