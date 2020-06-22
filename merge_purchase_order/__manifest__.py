@@ -2,7 +2,7 @@
 
 {
     'name': 'Merge Purchase Order',
-    'category': 'Purchase',
+    'category': 'Purchases',
     'summary': 'This module will merge purchase order.',
     'version': '12.0.1.0.1',
     'website': 'http://www.aktivsoftware.com',
