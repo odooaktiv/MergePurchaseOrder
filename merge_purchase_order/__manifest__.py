@@ -2,20 +2,17 @@
 
 {
     'name': 'Merge Purchase Order',
-    'category': 'Purchase',
+    'category': 'Purchases',
     'summary': 'This module will merge purchase order.',
-    'version': '12.0.1.0.0',
+    'version': '14.0.1.0.0',
     'website': 'http://www.aktivsoftware.com',
     'author': 'Aktiv Software',
     'description': 'Merge Purchase Order',
     'license': "AGPL-3",
 
-    'depends': [
-        'purchase',
-        'stock'
-    ],
-
+    'depends': ['purchase', 'stock', 'l10n_us'],
     'data': [
+        'security/ir.model.access.csv',
         'wizard/merge_puchase_order_wizard_view.xml',
     ],
 
